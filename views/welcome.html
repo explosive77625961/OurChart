@@ -3,7 +3,7 @@
 <title>{{i18n .Lang "welcome"}} - {{i18n .Lang "app_intro"}}</title>
 {{end}}
 {{define "body"}}
-<div class="container" style="width: 500px;">
+<div class="container" style="width: 500px;background: #080808;color: green;">
     <h3>{{i18n .Lang "set_profile"}}</h3>
     <br>
     <form action="/join" method="post" class="form-horizontal">
@@ -30,5 +30,13 @@
             </div>
         </div>
     </form>
+    <script>
+        $('#uname').bind('keyup', function(event) {
+            if (event.keyCode == "13") {
+                //回车执行查询
+                $('#uname').click();
+            }
+        });
+    </script>
 </div>
 {{end}}
